@@ -4,4 +4,10 @@ Countdown Challenge Website using React(Refs and Portal)
 ## To run: npm install => npm run dev => localhost:5173
 
 ### First Upload: ![image](https://github.com/dangminh214/Countdown-Challenge-Website-using-React-Refs-and-Portal-/assets/51837721/05ad13ea-1ba4-4c95-8d3c-8f8fee9a34ce)
+### Update 1: Now the name can be set using refs
+![image](https://github.com/dangminh214/Countdown-Challenge-Website-using-React-Refs-and-Portal-/assets/51837721/4a4ce8ed-66cc-45be-915d-2117026943b6)
+![image](https://github.com/dangminh214/Countdown-Challenge-Website-using-React-Refs-and-Portal-/assets/51837721/bba71d3b-80ad-428d-80b7-e921db66c1bb)
+![image](https://github.com/dangminh214/Countdown-Challenge-Website-using-React-Refs-and-Portal-/assets/51837721/48106347-4bd3-4fd7-aa47-3c0630ffbca6)
+
+
 
