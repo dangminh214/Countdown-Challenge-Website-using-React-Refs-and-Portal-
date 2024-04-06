@@ -14,6 +14,10 @@ Countdown Challenge Website using React(Refs and Portal)
 ![image](https://github.com/dangminh214/Countdown-Challenge-Website-using-React-Refs-and-Portal-/assets/51837721/1e995ebf-5b87-4be8-b994-892307a36c49)
 ![image](https://github.com/dangminh214/Countdown-Challenge-Website-using-React-Refs-and-Portal-/assets/51837721/99b4b792-8252-42e7-90bf-a9915e11a459)
 
+### Update 3: Add and show the remaining when Stop the Countdown or when the timer is ran out 
+![image](https://github.com/dangminh214/Countdown-Challenge-Website-using-React-Refs-and-Portal-/assets/51837721/a5aedc5d-05c3-4943-a24c-b6911afcbb7f)
+
+
 
 
 
