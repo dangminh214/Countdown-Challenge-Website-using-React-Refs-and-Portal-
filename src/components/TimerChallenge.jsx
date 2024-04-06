@@ -4,37 +4,43 @@ import ResultModel from "./ResultModel";
 export default function TimerChallenge({title, targetTime}) {
   const timer = useRef();
   const dialog = useRef();
-  const [timerStarted, setTimerStarted] = useState(false);
-  const [timerExpired, setTimerExpreird] = useState(false); 
+
+  const [timeRemaining, setTimeRemaining] = useState(targetTime * 1000);
+
+  const timerIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000; 
+
+  if (timeRemaining <= 0) {
+    clearInterval(timer.current); 
+    setTimeRemaining(targetTime * 1000);
+    dialog.current.open(); 
+  }
 
   function handleStart() {
-    timer.current = setTimeout(() => {
-      setTimerExpreird(true)
-      dialog.current.showModal();
-    }, targetTime * 1000);
-    setTimerStarted(true)
+    timer.current = setInterval(() => {
+      setTimeRemaining(prevTimeRemaining => prevTimeRemaining - 10);
+    }, 10);
   }
 
   function handleStop() {
-    clearTimeout(timer.current);
+    dialog.current.open() 
+    clearInterval(timer.current);
   }
 
   return (
     <>
-      <ResultModel ref = {dialog} targetTime = {targetTime} result="lost"/>
+      <ResultModel ref={dialog} targetTime={targetTime} result="lost" />
       <section className ="challenge">
         <h2>{title}</h2>
-        {timerExpired && <p>You lost!</p>}
         <p className="challenge-time">
           {targetTime} seconds { targetTime > 1 ? 's':''}
         </p>
         <p>
-          <button onClick={timerStarted ? handleStop : handleStart}>
-            {timerStarted ? 'Stop' : 'Start'} Challenge
+          <button onClick={timerIsActive ? handleStop : handleStart}>
+            {timerIsActive ? 'Stop' : 'Start'} Challenge
           </button>
         </p>
-        <p className = {timerStarted ? 'active': undefined}>
-          {timerStarted ? 'Time is running...' : 'Timer inactive'}
+        <p className = {timerIsActive ? 'active': undefined}>
+          {timerIsActive ? 'Time is running...' : 'Timer inactive'}
         </p>
       </section>
     </>
